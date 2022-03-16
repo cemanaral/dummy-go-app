@@ -5,5 +5,5 @@ ADD go.sum .
 RUN go mod download
 COPY *.go ./
 EXPOSE 1313
-RUN go build -o /gora-app
-CMD ["/gora-app"]
+RUN go build -o /bcfm-app
+CMD ["/bcfm-app"]
