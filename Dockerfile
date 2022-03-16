@@ -7,5 +7,5 @@ COPY go.sum ./
 RUN go mod download
 COPY *.go ./
 RUN go build
-EXPOSE 8080
+EXPOSE 1313
 CMD ["go", "run", "main.go"]
