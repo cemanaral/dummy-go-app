@@ -1,11 +1,9 @@
-# syntax=docker/dockerfile:1
-
-FROM public.ecr.aws/docker/library/golang:latest
+FROM golang:1.16-alpine
 WORKDIR /app
-COPY go.mod ./
-COPY go.sum ./
+ADD go.mod .
+ADD go.sum .
 RUN go mod download
 COPY *.go ./
-RUN go build
 EXPOSE 1313
-CMD ["go", "run", "main.go"]
+RUN go build -o /gora-app
+CMD ["/gora-app"]
